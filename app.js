@@ -7,3 +7,15 @@ searchTrigger.addEventListener('click', () => {
   searchForm.classList.add('search--is-open');
   searchInput.focus();
 });
+
+// If the search form is open, cycle focus between search input and search submit button
+
+
+// If the search form is open and the user presses "esc", close the search form
+window.onkeyup = event => {
+  if (event.keyCode == '27' && searchForm.classList.contains('search--is-open')) {
+    searchForm.classList.remove('search--is-open');
+  }
+};
+
+// If the user clicks outside of the search form, close the search form
