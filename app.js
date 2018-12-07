@@ -2,13 +2,14 @@ const searchTrigger = document.querySelector('[data-search-trigger]');
 const searchForm = document.querySelector('[data-search-form]');
 const searchInput = document.querySelector('[data-search-input');
 const searchSubmit = document.querySelector('[data-search-submit');
+const searchClose = document.querySelector('[data-search-close');
 
 const keyCodeTab = 9;
 const keyCodeEsc = 27;
 
 let searchFormElements = [];
 
-searchFormElements.push(searchInput, searchSubmit);
+searchFormElements.push(searchInput, searchSubmit, searchClose);
 
 const focusElement = (element) => {
   if (element !== undefined) {
@@ -70,5 +71,11 @@ window.onkeydown = event => {
     }
   }
 };
+
+// On search close click, close search form and move focus to search trigger
+searchClose.addEventListener('click', () => {
+  searchForm.classList.remove('search--is-open');
+  focusElement(searchTrigger);
+});
 
 // If the user clicks outside of the search form, close the search form

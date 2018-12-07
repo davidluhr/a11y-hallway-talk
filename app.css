@@ -168,6 +168,7 @@ body {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 40px 0px;
 }
 @media (max-width: 1199px) {
   .header {
@@ -275,6 +276,40 @@ body {
 }
 .search__submit:focus {
   outline-offset: -0.4rem;
+}
+
+.search__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition) opacity;
+}
+.search__close:focus {
+  display: block;
+  pointer-events: auto;
+  opacity: 1;
+  outline-offset: -0.4rem;
+}
+.search__close::before {
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+}
+
+.search__close__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 /* Center Nav */
