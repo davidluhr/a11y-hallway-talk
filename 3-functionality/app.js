@@ -79,3 +79,24 @@ searchClose.addEventListener('click', () => {
 });
 
 // If the user clicks outside of the search form, close the search form
+// function hideOnClickOutside(element) {
+//   const outsideClickListener = event => {
+//     if (!element.contains(event.target)) { // or use: event.target.closest(selector) === null
+//       console.log('click outside');
+//       if (isVisible(element)) {
+//         element.classList.remove('search--is-open');
+//         removeClickListener();
+//       }
+//     }
+//   };
+
+//   const removeClickListener = () => {
+//     document.removeEventListener('click', outsideClickListener);
+//   };
+
+//   document.addEventListener('click', outsideClickListener);
+// }
+
+// const isVisible = elem => !!elem && !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length );
+
+// hideOnClickOutside(searchForm);
