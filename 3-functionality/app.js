@@ -68,6 +68,7 @@ window.onkeydown = event => {
     if (event.keyCode === keyCodeEsc) {
       event.preventDefault();
       searchForm.classList.remove('search--is-open');
+      focusElement(searchTrigger);
     }
   }
 };
